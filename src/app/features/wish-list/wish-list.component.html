@@ -1,0 +1,43 @@
+<section class=" h-lvh  px-4 py-12">
+  <div class="container mx-auto">
+    <div class="p-4 rounded-lg shadow bg-gray-200">
+      <h1 class="text-3xl font-extrabold mb-4">Wish List</h1>
+      @if (wishListDetails.data.length== 0) {
+      <h2 class="text-2xl font-bold text-center">List Is Empty</h2>
+      }@else { @for (item of wishListDetails.data; track item._id) {
+      <div
+        class="bg-white p-2 my-2 rounded-lg shadow grid sm:grid-cols-12 space-x-4"
+      >
+        <div class="col-span-1">
+          <img [src]="item.imageCover" class="w-full" [alt]="item.title" />
+        </div>
+        <div class="col-span-11 flex justify-between items-center">
+          <div class="">
+            <div>
+              <h3>{{ item.title }}</h3>
+              <h4 class="mt-2 text-green-600">{{ item.price }} EGP</h4>
+              <div class="my-3">
+                <button
+                  (click)="removeItemWish(item._id)"
+                  class="noStyle cursor-pointer text-red-600"
+                >
+                  Remove
+                  <li class="fas fa-trash-can"></li>
+                </button>
+              </div>
+            </div>
+          </div>
+          <button
+            (click)="addProductItemToCart(item._id)"
+            class="bg-mainColor p-2 text-white hover:bg-secondColor rounded-lg transition-all duration-500 cursor-pointer"
+          >
+            Add Card
+          </button>
+        </div>
+      </div>
+      } 
+     
+    }
+    </div>
+  </div>
+</section>

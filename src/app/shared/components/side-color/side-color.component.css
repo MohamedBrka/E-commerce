@@ -1,0 +1,22 @@
+/* Sidebar transition */
+.translate-x-full {
+  transform: translateX(100%);
+}
+.translate-x-0 {
+  transform: translateX(0);
+}
+
+/* شكل أزرار الألوان */
+.color-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 9999px;
+  cursor: pointer;
+  border: 2px solid #ddd;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.color-circle:hover {
+  transform: scale(1.15);
+  border-color: var(--mainColor);
+}

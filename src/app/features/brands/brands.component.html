@@ -1,0 +1,78 @@
+<section class="m-8 p-10">
+  <div class="container mx-auto">
+    <h1 class="text-mainColor font-bold text-center text-4xl">ALL Brands</h1>
+    <div
+      class="perant mt-6 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch"
+    >
+      @for (item of brandsItems | paginate: { id: 'foo', itemsPerPage: pageSize,
+      currentPage: p, totalItems: total }; track item._id) {
+
+      <div
+        class="max-w-sm card hover:shadow-mainColor bg-white border border-gray-200 hover:scale-105 transition-all duration-1000 overflow-hidden rounded-lg dark:bg-gray-800 dark:border-gray-700 cursor-pointer"
+        (click)="openModal(item)"
+      >
+        <img class="rounded-t-lg" [src]="item.image" [alt]="item.name" />
+        <div class="p-5">
+          <p
+           id="brand" class="mb-3 font-semibold  dark:text-gray-400 text-center"
+          >
+            {{ item.name }}
+          </p>
+        </div>
+      </div>
+
+      }
+    </div>
+  </div>
+
+  <div class="flex justify-center mt-4">
+    <pagination-controls
+      class="my-pagination"
+      id="foo"
+      (pageChange)="getAllBrandsData($event)"
+    >
+    </pagination-controls>
+  </div>
+</section>
+
+<!-- ✅ المودال -->
+<div
+  id="default-modal"
+  tabindex="-1"
+  aria-hidden="true"
+  [class.hidden]="!selectedBrand"
+  class="fixed top-0 right-0 left-0 z-50 justify-center items-center w-full inset-0 h-[calc(100%-1rem)] max-h-full flex bg-black/50"
+>
+  <div class="relative p-4 w-full max-w-2xl max-h-full animate-slide-down">
+    <div class="relative bg-white rounded-lg shadow-sm dark:bg-gray-700">
+      <!-- Modal header -->
+      <div
+        class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600 border-gray-200"
+      >
+        <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+          {{ selectedBrand?.name }}
+        </h3>
+        <button
+          type="button"
+          class="text-mainColor cursor-pointer bg-transparent hover:bg-mainColor hover:text-white rounded-lg text-2xl font-semibold w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+          (click)="closeModal()"
+        >
+          ✕
+        </button>
+      </div>
+      <!-- Modal body -->
+      <div class="p-4 md:p-5 space-y-4">
+        <img
+          class="w-full max-h-80 object-contain rounded"
+          [src]="selectedBrand?.image"
+          [alt]="selectedBrand?.name"
+        />
+        <p
+          class="text-base leading-relaxed text-gray-500 dark:text-gray-400 text-center"
+        >
+          Brand Details for <strong>{{ selectedBrand?.name }}</strong>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

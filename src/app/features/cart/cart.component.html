@@ -1,0 +1,75 @@
+<section class="bg-gray-200 h-lvh p-4">
+  <div class="container mx-auto grid sm:grid-cols-12 gap-10 items-start">
+    <div class="col-span-8 p-4 rounded-lg shadow">
+      <div class="flex items-center space-x-4">
+        <h1 class="text-3xl font-bold">Cart</h1>
+        <span 
+          >{{ cartDetails.products.length }} Items</span
+        >
+      </div>
+      @if (cartDetails.products.length==0) {
+      <h2 class="text-2xl font-bold text-center">Cart Is Empty</h2>
+      }@else { @for (item of cartDetails.products; track item.product._id) {
+      <div
+        class="bg-white p-2 my-2 rounded-lg shadow grid sm:grid-cols-12 space-x-4"
+      >
+        <div class="col-span-1">
+          <img
+            [src]="item.product.imageCover"
+            class="w-full"
+            [alt]="item.product.title"
+          />
+        </div>
+        <div class="col-span-11 flex justify-between items-center">
+          <div>
+            <h3>{{ item.product.title }}</h3>
+            <div class="flex items-center space-x-4 my-3">
+              <div
+                class="bg-gray-200 border rounded-lg flex items-center space-x-6 py-1 px-2"
+              >
+                <button
+                  (click)="updateCountData(item.product._id, item.count - 1)"
+                  class="cursor-pointer noStyle"
+                >
+                  <li class="fas fa-minus"></li>
+                </button>
+                <span>{{ item.count }}</span>
+                <button
+                  (click)="updateCountData(item.product._id, item.count + 1)"
+                  class="cursor-pointer noStyle"
+                >
+                  <li class="fas fa-plus"></li>
+                </button>
+              </div>
+              <button
+                (click)="removeItemData(item.product._id)"
+                class="cursor-pointer noStyle"
+              >
+                <li class="fas fa-trash-can"></li>
+              </button>
+            </div>
+          </div>
+          <span>{{ item.price * item.count | currency : "EUR" }} </span>
+        </div>
+      </div>
+
+      }
+       <button (click)="clearUserCart()" class="btn">
+      🗑️ Clear Cart
+    </button> 
+    }
+      
+    </div>
+   
+    <div class="col-span-4 bg-white p-4 rounded-lg shadow">
+      <h2 class="text-2xl font-bold">Order Summray</h2>
+      <div class="flex items-center justify-between my-4">
+        <span>Total Price</span>
+        <span>{{ cartDetails.totalCartPrice | currency : "EUR" }}</span>
+      </div>
+      <button [routerLink]="['/ckeckout', cartDetails._id]" class="btn">
+        Proceed To CheckOut
+      </button>
+    </div>
+  </div>
+</section>

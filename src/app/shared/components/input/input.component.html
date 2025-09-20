@@ -1,0 +1,76 @@
+<div class="  mb-2">
+
+   <label
+    [class]="{
+      'text-red-700': control?.invalid && control?.touched,
+      'text-green-700': control?.valid
+    }"
+    [for]="idInput"
+    class="  text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+    >{{ lableInput }}</label
+  >
+ @if (element==='input') {
+   <input
+    [class]="{
+      'border-red-700': control?.invalid && control?.touched,
+      'border-green-700': control?.valid
+    }"
+    [formControl]="control"
+    [type]="typeInput"
+    [id]="idInput"
+   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+    placeholder=" "
+  />
+ }@else if (element==='text') {
+    <textarea
+    [class]="{
+      'border-red-700': control?.invalid && control?.touched,
+      'border-green-700': control?.valid
+    }"
+    [formControl]="control"
+    [id]="idInput"
+   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+    placeholder=" "
+  ></textarea>
+ }
+
+ 
+  @if ( control?.errors && control?.touched) {
+  <div
+    class="flex p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
+    role="alert"
+  >
+    <svg
+      class="shrink-0 inline w-4 h-4 me-3 mt-[2px]"
+      aria-hidden="true"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="currentColor"
+      viewBox="0 0 20 20"
+    >
+      <path
+        d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"
+      />
+    </svg>
+    <span class="sr-only">Danger</span>
+    <div>
+      <span class="font-medium">Ensure that these requirements are met:</span>
+      <ul class="mt-1.5 list-disc list-inside">
+        @if ( control?.hasError('required')) {
+        <li>Input is Required</li>
+        }@if ( control?.hasError('minlength')) {
+        <li>Input should be more than or equal 2 chars</li>
+        }@if ( control?.hasError('maxlength')) {
+        <li>Input should be less than or equal 20 chars</li>
+        } @if ( control?.hasError('email')) {
+        <li>Please Enter a valid email address</li>
+        } @if ( control?.hasError('pattern')) {
+        <li> <ng-content/></li>
+        } @if ( control?.hasError('missMatch')) {
+        <li>Password confirmation is incorrect</li>
+        }
+      </ul>
+    </div>
+  </div>
+
+  }
+</div>

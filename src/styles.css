@@ -1,0 +1,114 @@
+@import "tailwindcss";
+@import "flowbite/src/themes/default";
+@plugin "flowbite/plugin";
+@source "../node_modules/flowbite";
+
+@theme {
+  --color-mainColor: #8B5E35;
+  --color-secondColor: #9B7E5C;
+  --color-therdColor: #9D9DAA;
+  --main-shadow: #8B5E3580;
+}
+@layer components {
+  .btn {
+    @apply disabled:bg-gray-200 disabled:cursor-not-allowed bg-mainColor w-full p-1.5 text-white hover:bg-secondColor transition-all duration-500 cursor-pointer;
+  }
+  .main-input {
+    @apply block rounded-t-lg px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600;
+  }
+  .main-lable {
+    @apply absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] start-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto;
+  }
+}
+@layer utilities {
+  .shadow-mainColor {
+    box-shadow: 0 4px 10px var(--main-shadow);
+  }
+
+  .hover\:shadow-mainColor:hover {
+    box-shadow: 0 4px 15px var(--main-shadow);
+  }
+
+  .focus\:shadow-mainColor:focus {
+    box-shadow: 0 4px 15px var(--main-shadow);
+  }
+}
+
+
+
+
+
+
+/* 👇 ده الثابت الأساسي */
+:root {
+  --mainColor: #8B5E35; /* اللون الافتراضي */
+  --sec-color: #9D9DAA;
+  --light-color: #f0f3f2;
+  --shadow: rgba(145, 158, 171, 0.2) 0px 2px 4px -1px,
+    rgba(145, 158, 171, 0.14) 0px 4px 5px 0px,
+    rgba(145, 158, 171, 0.12) 0px 1px 10px 0px;
+  --font-family: "Encode Sans Expanded", sans-serif;
+  --rating-color: #ffc908;
+}
+
+/* استخدام اللون الأساسي */
+.btn-main {
+  background-color: var(--mainColor);
+  padding: 7px 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.5s;
+}
+.btn-main:disabled {
+  cursor: not-allowed;
+  background-color: #ccc;
+}
+.btn-main:hover {
+  opacity: 0.9;
+}
+
+/* الروابط */
+a {
+  color: var(--mainColor);
+  
+}
+a:hover {
+  opacity: 0.8;
+}
+a.noStyle {
+  color: initial; /* أو أي تصميم خاص */
+}
+h1,h2 {
+  color: var(--mainColor);
+  
+}
+h1,h2:hover {
+  opacity: 0.8;
+}
+button {
+  background-color: var(--mainColor);
+ 
+}
+button:hover {
+  opacity: 0.8;
+}
+button.noStyle {
+  background-color: initial; /* أو أي تصميم خاص */
+}
+span#bg {
+  background-color: var(--mainColor);
+  
+}
+thead {
+  background-color: var(--mainColor);
+  
+}
+
+p#brand{
+  color: var(--mainColor);
+}
+
+
+

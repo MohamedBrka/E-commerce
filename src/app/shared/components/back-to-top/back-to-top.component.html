@@ -1,0 +1,15 @@
+<div
+  *ngIf="isVisible"
+  class="fixed bottom-6 right-3 transition-opacity duration-500 opacity-100 "
+  @fadeInOut
+>
+  <button
+    (click)="scrollToTop()"
+    class="bg-mainColor text-white py-6 px-4 rounded-full shadow-mainColor shadow-2xl 
+           hover:bg-secondColor transition duration-300 transform hover:scale-110 animate-bounce cursor-pointer"
+    aria-label="Back to top"
+  >
+    <!-- <i class="fa-solid fa-arrow-up fa-lg cursor-pointer"></i> -->
+    <i class="fa-solid fa-angle-up fa-2xl font-extrabold "></i>
+  </button>
+</div>

@@ -1,0 +1,66 @@
+<section class="py-14">
+  <div class="container mx-auto">
+    <!-- العنوان -->
+    <h1
+      class="text-center font-extrabold text-3xl mb-6 transition-all duration-700"
+         [ngClass]="{
+        'opacity-100 translate-y-0': isLoaded,
+        'opacity-0 -translate-y-20': !isLoaded
+      }"
+    >
+      Product Details
+    </h1>
+
+    <div class="grid sm:grid-cols-12 items-center gap-6">
+      <!-- الصورة -->
+      <div
+        class="col-span-3 transition-all duration-700"
+    [ngClass]="{
+          'opacity-100 translate-x-0': isLoaded,
+          'opacity-0 -translate-x-20': !isLoaded
+        }"
+      >
+        <img
+          [src]="productDetails.imageCover"
+          class="w-full rounded-2xl"
+          [alt]="productDetails.title"
+        />
+      </div>
+
+      <!-- التفاصيل -->
+      <div
+        class="col-span-9 transition-all duration-700 delay-200"
+         [ngClass]="{
+          'opacity-100 translate-y-0': isLoaded,
+          'opacity-0 -translate-y-20': !isLoaded
+        }"
+      >
+        <h2 class="text-xl font-semibold">{{ productDetails.title }}</h2>
+        <p class="text-gray-500 text-sm my-3">
+          {{ productDetails.description }}
+        </p>
+        <span class="block mb-2">{{ productDetails.category.name }}</span>
+
+        <div class="flex items-center justify-between mb-3">
+          <span class="font-bold text-lg">{{ productDetails.price }} EGY</span>
+          <span class="flex items-center gap-1">
+            <i class="fa-solid fa-star text-amber-300"></i>
+            {{ productDetails.ratingsAverage }}
+          </span>
+        </div>
+
+        <!-- الزرار -->
+        <button
+          (click)="addProductItemToCart(productDetails._id)"
+          class="btn transition-all duration-700 delay-500"
+           [ngClass]="{
+            'opacity-100 translate-y-0': isLoaded,
+            'opacity-0 translate-y-20': !isLoaded
+          }"
+        >
+          Add To Cart
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

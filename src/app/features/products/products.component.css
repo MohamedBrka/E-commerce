@@ -1,0 +1,13 @@
+
+.my-pagination::ng-deep .ngx-pagination .current {
+  background: var(--mainColor) !important;
+  color: #fff !important;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.my-pagination::ng-deep .ngx-pagination a:hover {
+  background: var(--mainColor)20 !important; /* 20 = شفافية */
+  color: var(--mainColor) !important;
+  border-radius: 6px;
+}

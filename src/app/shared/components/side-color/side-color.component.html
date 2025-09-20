@@ -1,0 +1,29 @@
+<!-- زرار فتح/إغلاق الـ sidebar -->
+<button 
+  (click)="toggleSidebar()" 
+  class="fixed top-[450px] right-1 z-50 bg-[var(--mainColor)] text-white p-3 rounded-s-full shadow-lg hover:opacity-80 transition">
+  🎨
+</button>
+
+<!-- الـ Sidebar -->
+<div 
+  class="fixed top-1/4 right-0 h-fit w-60 bg-white shadow-lg transform transition-transform duration-300 z-50"
+  [class.translate-x-full]="!isOpen"
+  [class.translate-x-0]="isOpen">
+
+  <!-- الهيدر -->
+  <div class="flex items-center justify-between p-4 border-b border-gray-200">
+    <h2 class="text-lg font-semibold text-gray-800">Choose the color</h2>
+    <button (click)="toggleSidebar()" class="text-gray-500 hover:text-gray-800">✖</button>
+  </div>
+
+  <!-- الألوان -->
+  <div class="p-4 grid grid-cols-4 gap-3">
+    <div 
+      *ngFor="let color of colors" 
+      (click)="setThemeColor(color)" 
+      class="w-10 h-10 rounded-lg cursor-pointer border-2 border-gray-300 hover:scale-110 transition"
+      [style.background]="color">
+    </div>
+  </div>
+</div>
