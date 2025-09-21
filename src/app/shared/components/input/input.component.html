@@ -6,7 +6,7 @@
       'text-green-700': control?.valid
     }"
     [for]="idInput"
-    class="  text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+    class="  text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:placeholder-gray-400 dark:text-white"
     >{{ lableInput }}</label
   >
  @if (element==='input') {
@@ -18,8 +18,9 @@
     [formControl]="control"
     [type]="typeInput"
     [id]="idInput"
-   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-    placeholder=" "
+     [placeholder]="placeInput"
+   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:placeholder-gray-400 dark:text-black"
+  
   />
  }@else if (element==='text') {
     <textarea
@@ -29,7 +30,7 @@
     }"
     [formControl]="control"
     [id]="idInput"
-   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:placeholder-gray-400 dark:text-black"
     placeholder=" "
   ></textarea>
  }

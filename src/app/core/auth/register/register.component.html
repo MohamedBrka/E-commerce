@@ -70,12 +70,14 @@
       [idInput]="'name'"
       [typeInput]="'text'"
       [lableInput]="'Name'"
+      [placeInput]="'Mohamed Mabrouk'"
     ></app-input>
     <app-input
       [control]="registerForm.get('email')"
       [idInput]="'email'"
       [typeInput]="'email'"
       [lableInput]="'Email'"
+      [placeInput]="'name@company.com'"
     >
   Email is incorrect
   </app-input>
@@ -84,6 +86,7 @@
       [idInput]="'password'"
       [typeInput]="'password'"
       [lableInput]="'Password'"
+      [placeInput]="'************'"
     >
       Custem field should match the pattern
     </app-input>
@@ -92,6 +95,7 @@
       [idInput]="'repassword'"
       [typeInput]="'password'"
       [lableInput]="'rePassword'"
+      [placeInput]="'************'"
     ></app-input>
 
     <app-input
@@ -99,6 +103,7 @@
       [idInput]="'phone'"
       [typeInput]="'tel'"
       [lableInput]="'Phone'"
+      [placeInput]="'01123456789'"
     >
       Accept only Egypt phone number 
     </app-input>

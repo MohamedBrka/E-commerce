@@ -1,13 +1,13 @@
 <div
-  class="max-w-sm overflow-hidden card hover:shadow-mainColor bg-white hover:scale-105 transition-all duration-1000 border-gray-200 rounded-lg dark:bg-gray-800 dark:border-gray-700 flex flex-col h-full group/card"
+  class="max-w-sm overflow-hidden card hover:shadow-mainColor bg-white hover:scale-105 transition-all duration-1000  rounded-lg dark:bg-gray-900  flex flex-col h-full group/card"
 >
   <!-- صورة المنتج -->
   <div
-    class="cursor-pointer h-full"
+    class="cursor-pointer h-full "
     [routerLink]="['/details', product.slug, product._id]"
   >
     <img
-      class="rounded-t-lg p-1"
+      class=" p-1 "
       [src]="product.imageCover"
       [alt]="product.title"
     />
@@ -24,7 +24,7 @@
           @if(isBlack===false){
           <i
             (click)="addProductItemToWishList(product._id, $event)"
-            class="fa-solid fa-heart fa-lg cursor-pointer"
+            class="fa-solid fa-heart fa-lg cursor-pointer dark:text-white"
           ></i>
           }@else if(isBlack===true){
           <i
@@ -48,7 +48,7 @@
       </p>
 
       <!-- السعر والتقييم -->
-      <div class="flex items-center justify-between mt-auto">
+      <div class="flex items-center justify-between mt-auto dark:text-white">
         <span>{{ product.price }} EGP</span>
         <span>
           <i class="fa-solid fa-star text-yellow-400"></i>

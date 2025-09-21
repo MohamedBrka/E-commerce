@@ -13,4 +13,5 @@ export class InputComponent {
 @Input() element:string = "input";
 @Input() idInput!:string;
 @Input() lableInput!:string;
+@Input() placeInput!:string;
 }
