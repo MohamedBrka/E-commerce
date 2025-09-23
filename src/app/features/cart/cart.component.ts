@@ -38,7 +38,7 @@ removeItemData(id:string):void{
     next:(res)=>{
       console.log(res);
       this.cartDetails = res.data;
-      this.cartService.countNumber.next(res.numOfCartItems);
+      this.cartService.countNumber.set(res.numOfCartItems);
       this.toastrService.success(" 🗑️ Item removed successfully!" , `Remove Item`)
     },
     error:(err)=>{
@@ -66,7 +66,7 @@ clearUserCart(): void {
     next: (res) => {
       console.log(res);
       this.getLoggedUserData(); // نفضي الداتا
-      this.cartService.countNumber.next(0); // نرجّع العدد صفر في النافبار
+      this.cartService.countNumber.set(0); // نرجّع العدد صفر في النافبار
       this.toastrService.success("🗑️ Cart cleared successfully!", "Clear Cart");
     },
     error: (err) => {

@@ -97,10 +97,10 @@ button:hover {
 button.noStyle {
   background-color: initial; /* أو أي تصميم خاص */
 }
-span#bg {
+/* span#bg {
   background-color: var(--mainColor);
   
-}
+} */
 thead {
   background-color: var(--mainColor);
   

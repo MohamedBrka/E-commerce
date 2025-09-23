@@ -17,16 +17,10 @@ export class CardComponent implements OnInit {
   private readonly wishListService = inject(WishListService);
   private readonly toastrService = inject(ToastrService);
 
-  isBlack: boolean = false; // الافتراضي أسود
+  isBlack: boolean = false;
 
   ngOnInit(): void {
-    // أول ما يركب الكارت، شوف هل المنتج ده في المفضلة
     this.isBlack = this.wishListService.isInWishList(this.product._id);
-    this.wishListService.wishList$.subscribe((ids) => {
-    this.isBlack = ids.includes(this.product._id);
-  });
-
-    // وكمان نسمع أي تحديث في المفضلة
     this.wishListService.wishList$.subscribe((ids) => {
       this.isBlack = ids.includes(this.product._id);
     });
@@ -35,7 +29,7 @@ export class CardComponent implements OnInit {
   addProductItemToCart(id: string): void {
     this.cartService.addProductToCart(id).subscribe({
       next: (res) => {
-        this.cartService.countNumber.next(res.numOfCartItems);
+        this.cartService.countNumber.set(res.numOfCartItems);
         if (res.status === 'success') {
           this.toastrService.success(res.message, 'Fresh Cart');
         }
@@ -50,6 +44,7 @@ export class CardComponent implements OnInit {
     event.stopPropagation();
     this.wishListService.addProductToWishList(id).subscribe({
       next: (res) => {
+        console.log(res);
         if (res.status === 'success') {
           this.toastrService.success(res.message, 'Wish List');
         }

@@ -1,13 +1,16 @@
-<nav id="shad" class="bg-white  border-gray-100 dark:bg-gray-900 shadow-mainColor sticky top-0 z-50">
+<nav
+  id="shad"
+  class="bg-white border-gray-100 dark:bg-gray-900 shadow-mainColor sticky top-0 z-50"
+>
   <div
     class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
   >
-    <a
-      
-      class="flex items-center space-x-3 rtl:space-x-reverse"
-    >
+    <a class="flex items-center space-x-3 rtl:space-x-reverse">
       <!-- <img src="/images/freshcart-logo.svg" class="h-8" alt="Flowbite Logo" /> -->
-       <h2 class="text-3xl text-mainColor font-bold "> <li class="text-2xl fas fa-bag-shopping"></li> Fresh Cart</h2>
+      <h2 class="text-3xl text-mainColor font-bold">
+        <li class="text-2xl fas fa-bag-shopping"></li>
+        Fresh Cart
+      </h2>
     </a>
     <button
       data-collapse-toggle="navbar-default"
@@ -35,74 +38,67 @@
     </button>
     <div class="hidden grow w-full md:flex md:w-auto" id="navbar-default">
       @if (islogin===true) {
-      <ul
-        class="font-bold mx-auto flex flex-col p-4 md:p-2 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-3 rtl:space-x-reverse md:mt-0 md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700"
-      >
-        <li>
-          <a
-            routerLinkActive=" font-extrabold text-2xl "
-            routerLink="/home"
-            class="block noStyle py-2 px-3 text-therdColor hover:text-therdColor hover:scale-105 transition-all duration-200 rounded-sm md:p-2 dark:text-white md:dark:text-blue-500"
-            aria-current="page"
-            >Home</a
-          >
-        </li>
+      <div class="w-full flex justify-center">
+        <ul
+          class="font-bold flex flex-col p-4 md:p-2 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-3 rtl:space-x-reverse md:mt-0 md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700"
+        >
+          <li>
+            <a
+              routerLinkActive=" font-extrabold text-2xl "
+              routerLink="/home"
+              class="block noStyle py-2 px-3 text-therdColor hover:text-therdColor hover:scale-105 transition-all duration-200 rounded-sm md:p-2 dark:text-white md:dark:text-blue-500"
+              aria-current="page"
+              >Home</a
+            >
+          </li>
 
-        <li>
-          <a
-            routerLinkActive=" font-extrabold text-2xl"
-            routerLink="/products"
-            class="block noStyle py-2 px-3 text-therdColor hover:text-therdColor hover:scale-105 transition-all duration-200 rounded-sm md:p-2 dark:text-white md:dark:text-blue-500"
-            aria-current="page"
-            >Products</a
-          >
-        </li>
-        <li>
-          <a
-            routerLinkActive=" font-extrabold text-2xl"
-            routerLink="/categories"
-            class="block noStyle py-2 px-3 text-therdColor hover:text-therdColor hover:scale-105 transition-all duration-200 rounded-sm md:p-2 dark:text-white md:dark:text-blue-500"
-            aria-current="page"
-            >Category</a
-          >
-        </li>
-        <li>
-          <a
-            routerLinkActive=" font-extrabold text-2xl"
-            routerLink="/wishList"
-            class="block py-2 px-3 noStyle text-therdColor hover:text-therdColor hover:scale-105 transition-all duration-200 rounded-sm md:p-2 dark:text-white md:dark:text-blue-500"
-            aria-current="page"
-            >Wish List</a
-          >
-        </li>
-        <li>
-          <a
-            routerLinkActive=" font-extrabold text-2xl"
-            routerLink="/brands"
-            class="block py-2 px-3 noStyle text-therdColor hover:text-therdColor hover:scale-105 transition-all duration-200 rounded-sm md:p-2 dark:text-white md:dark:text-blue-500"
-            aria-current="page"
-            >Brands</a
-          >
-        </li>
-        <li>
-          <a
-            routerLinkActive=" font-extrabold text-2xl"
-            routerLink="/allorders"
-            class="block py-2 px-3 noStyle text-therdColor hover:text-therdColor hover:scale-105 transition-all duration-200 rounded-sm md:p-2 dark:text-white md:dark:text-blue-500"
-            aria-current="page"
-            >All Orders</a
-          >
-        </li>
-      </ul>
+          <li>
+            <a
+              routerLinkActive=" font-extrabold text-2xl"
+              routerLink="/products"
+              class="block noStyle py-2 px-3 text-therdColor hover:text-therdColor hover:scale-105 transition-all duration-200 rounded-sm md:p-2 dark:text-white md:dark:text-blue-500"
+              aria-current="page"
+              >Products</a
+            >
+          </li>
+          <li>
+            <a
+              routerLinkActive=" font-extrabold text-2xl"
+              routerLink="/categories"
+              class="block noStyle py-2 px-3 text-therdColor hover:text-therdColor hover:scale-105 transition-all duration-200 rounded-sm md:p-2 dark:text-white md:dark:text-blue-500"
+              aria-current="page"
+              >Category</a
+            >
+          </li>
+
+          <li>
+            <a
+              routerLinkActive=" font-extrabold text-2xl"
+              routerLink="/brands"
+              class="block py-2 px-3 noStyle text-therdColor hover:text-therdColor hover:scale-105 transition-all duration-200 rounded-sm md:p-2 dark:text-white md:dark:text-blue-500"
+              aria-current="page"
+              >Brands</a
+            >
+          </li>
+          <li>
+            <a
+              routerLinkActive=" font-extrabold text-2xl"
+              routerLink="/allorders"
+              class="block py-2 px-3 noStyle text-therdColor hover:text-therdColor hover:scale-105 transition-all duration-200 rounded-sm md:p-2 dark:text-white md:dark:text-blue-500"
+              aria-current="page"
+              >All Orders</a
+            >
+          </li>
+        </ul>
+      </div>
       }
       <ul
         class="font-medium ms-auto flex items-center flex-col py-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-3 rtl:space-x-reverse md:mt-0 md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700"
       >
-       
         @if (islogin===false) {
         <li>
           <a
-            routerLinkActive=" font-extrabold text-2xl"
+            routerLinkActive=" font-extrabold text-2xl "
             routerLink="/login"
             class="block py-2 px-3 text-mainColor hover:text-mainColor hover:scale-105 transition-all duration-200 rounded-sm md:p-0 dark:text-white md:dark:text-blue-500"
             aria-current="page"
@@ -119,16 +115,34 @@
           >
         </li>
         }@else {
-
         <li>
           <a
-            routerLinkActive=" font-extrabold text-2xl"
-            routerLink="/cart"
-            class=" relative block py-2 px-3 text-mainColor hover:text-mainColor hover:scale-105 transition-all duration-200 rounded-sm md:p-2 dark:text-white md:dark:text-blue-500"
+            routerLinkActive=" text-4xl  "
+            routerLink="/wishList"
+            class="relative block text-2xl py-2 px-3 scale-105 text-mainColor hover:text-mainColor hover:scale-105 transition-all duration-200 rounded-sm md:p-2 dark:text-white md:dark:text-blue-500"
             aria-current="page"
           >
-            <li class="text-3xl fas fa-cart-shopping"></li>
-            <span id="bg" class="bg-mainColor font-extrabold text-white text-[10px] py-[2px] px-2 rounded-lg absolute top-0 end-0 z-10">{{count}}</span>
+            <li class=" fas fa-heart"></li>
+            <span
+              id="bg"
+              class="bg-gray-300 font-extrabold text-white text-[10px] py-[3px] px-2 rounded-lg absolute top-1.5 end-0 z-50"
+              >{{ heart() }}</span
+            >
+          </a>
+        </li>
+        <li>
+          <a
+            routerLinkActive="text-4xl "
+            routerLink="/cart"
+            class="relative block text-2xl font-bold py-2 px-3 text-mainColor hover:text-mainColor hover:scale-105 transition-all duration-200 rounded-sm md:p-2 dark:text-white md:dark:text-blue-500"
+            aria-current="page"
+          >
+            <li class=" fas fa-cart-shopping"></li>
+            <span
+              id="bg"
+              class="bg-gray-300 font-extrabold text-white text-[10px] py-[3px] px-2 rounded-lg absolute top-0 end-0 z-50"
+              >{{ count() }}</span
+            >
           </a>
         </li>
 

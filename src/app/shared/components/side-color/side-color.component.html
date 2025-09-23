@@ -1,7 +1,7 @@
 <!-- زرار فتح/إغلاق الـ sidebar -->
 <button 
   (click)="toggleSidebar()" 
-  class="fixed top-[450px] right-1 z-50 bg-[var(--mainColor)] text-white p-3 rounded-s-full shadow-lg hover:opacity-80 transition">
+  class="fixed top-[450px] right-1 z-50 bg-[var(--mainColor)] text-white p-3 rounded-s-full shadow-lg hover:opacity-80 transition cursor-pointer">
   🎨
 </button>
 
@@ -13,8 +13,8 @@
 
   <!-- الهيدر -->
   <div class="flex items-center justify-between p-4 border-b border-gray-200">
-    <h2 class="text-lg font-semibold text-gray-800">Choose the color</h2>
-    <button (click)="toggleSidebar()" class="text-gray-500 hover:text-gray-800">✖</button>
+    <h2 class="text-lg font-bold text-gray-800">Choose the color</h2>
+    <button (click)="toggleSidebar()" class="text-gray-500 hover:text-gray-800 rounded-lg cursor-pointer">✖</button>
   </div>
 
   <!-- الألوان -->

@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { inject, Injectable } from '@angular/core';
+import { inject, Injectable, signal, Signal, WritableSignal } from '@angular/core';
 import { environment } from '../../../../environments/environment.development';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { CookieService } from 'ngx-cookie-service';
@@ -10,7 +10,8 @@ import { CookieService } from 'ngx-cookie-service';
 export class CartService {
   private readonly httpClient = inject(HttpClient);
   private readonly cookieService = inject(CookieService);
-countNumber:BehaviorSubject<number> = new BehaviorSubject(0);
+countNumber:WritableSignal<number>=signal(0)
+
 
   myHeader: object = {
     headers: {
